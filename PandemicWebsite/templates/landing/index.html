@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {% for result in results %}
+        <h1>{{ result.address }}</h1>
+        <p>Patient Capacity: {{result.patient_capacity}}</p>
+        <p>Wait Time: {{result.wait_time}}</p>
+        <p>Drive Time: {{result.drive_time}}</p>
+    {% endfor %}
+</body>
+</html>
