@@ -1,14 +1,53 @@
-<!DOCTYPE html>
-<html>
+{% load static %}
+
+<!doctype html>
+<html lang="en">
 <head>
-    <title></title>
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel= "stylesheet" type = "text/css" href="{% static 'landing/main.css' %}">
+</head> 
 <body>
-    {% for result in results %}
-        <h1>{{ result.address }}</h1>
-        <p>Patient Capacity: {{result.patient_capacity}}</p>
-        <p>Wait Time: {{result.wait_time}}</p>
-        <p>Drive Time: {{result.drive_time}}</p>
-    {% endfor %}
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Nearest Hospitals</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="/admin">Hospital Sign-In</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class = "form-group">
+    <form method = 'GET' action = '' class="form-inline md-form mr-auto mb-4">
+      <input type = 'text' name = 'q' placeholder = 'Address' class="form-control mr-sm-2" id = "inputAddress" aria-label="Search"/>
+      <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="container">
+  {% for result in results %}
+    <article class="media content-section">
+      <div class="media-body">
+        <h2><a class="result-title" href="#">{{ result.address }}</a></h2>
+        <p class="result-content">Patient Capacity: {{ result.patient_capacity }}</p>
+        <p class="result-content">Wait Time: {{ result.wait_time }}</p>
+        <p class="result-content">Drive Time: {{ result.drive_time }}</p>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
