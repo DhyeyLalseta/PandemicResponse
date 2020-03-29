@@ -8,6 +8,7 @@ class Result(models.Model):
     Hospitals can input their address, patient capacity, wait time.
     Process for determining drive time will be created in future.
     """
+
     address = models.CharField(max_length=100)
     patient_capacity = models.PositiveIntegerField()
     wait_time = models.PositiveIntegerField()
