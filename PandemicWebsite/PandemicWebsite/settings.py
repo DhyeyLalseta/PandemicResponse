@@ -55,7 +55,7 @@ ROOT_URLCONF = 'PandemicWebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\dhyey\Projects\PandemicResponse\PandemicWebsite\templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
